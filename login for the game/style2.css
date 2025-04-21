@@ -1,0 +1,237 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #330000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+  color: #fff;
+  min-height: 100vh;
+}
+
+#info-bar {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#score, #timer, #hider-indicator {
+  background: rgba(26, 26, 26, 0.9);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+}
+
+#game-container {
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  background-size: cover;
+  background-image: url('images/map1.png');
+  border: 3px solid #1a1a1a;
+  box-shadow: 0 0 30px rgba(255, 51, 51, 0.6);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.hider {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.hider:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #ff1a1a);
+}
+
+#message-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%; /* full width of the container */
+  height: 100%; /* full height of the container */
+  top: 0;
+  left: 0;
+  background-color: rgba(26, 26, 26, 0.95);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.7);
+  z-index: 3;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#message {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ff1a1a;
+}
+
+#next-button,
+#retry-button,
+#main-menu-button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+
+#main-menu-button {
+  margin-top: 20px;
+  background-color: #FF5722;
+}
+
+#main-menu-button:hover {
+  background-color: #FF3D00;
+}
+
+#next-button {
+  display: none;
+}
+
+/* Center Difficulty Buttons and Dashboard Button */
+/* Center Difficulty Buttons and Dashboard Button */
+#level-selection {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+}
+
+#difficulty-buttons {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center; /* Centers the difficulty buttons */
+}
+
+.difficulty-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #990000;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.difficulty-btn:hover {
+  background-color: #ff1a1a;
+}
+
+/* Center Dashboard Button */
+#dashboard-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Centers the dashboard button */
+}
+
+#dashboard-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #990000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+
+#dashboard-button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Responsive for tablets */
+@media (max-width: 1200px) {
+  #info-bar, #game-container {
+    width: 90%;
+  }
+
+  #game-container {
+    height: 70vh;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #info-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #game-container {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .hider {
+    width: 60px;
+    height: 60px;
+  }
+
+  #message {
+    font-size: 20px;
+  }
+
+  #next-button,
+  #retry-button,
+  #main-menu-button,
+  .difficulty-btn,
+  #dashboard-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #level-selection {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center; /* Center the difficulty section on mobile */
+    justify-content: center; /* Center all content */
+  }
+
+  #difficulty-buttons {
+    margin-bottom: 10px;
+    justify-content: center; /* Centers difficulty buttons on mobile */
+  }
+
+  .difficulty-btn {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  #dashboard-button-container {
+    margin-top: 20px;
+    justify-content: center; /* Centers the dashboard button on mobile */
+  }
+}
